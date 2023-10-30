@@ -1,9 +1,18 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import GymPointLogo from "../../assets/gympoint-logo.svg";
 import "./styles.scss";
 
 export function LoginPage() {
+  const location = useLocation();
+  useEffect(() => {
+    if (location.pathname === "/login") {
+      document.body.classList.add("gym-point-login");
+    }
+  }, [location]);
   return (
-    <section className="gym-sign">
+    <section className="flex items-center justify-center mx-auto gym-sign">
       <div className="container flex flex-col p-6 mx-auto bg-white rounded-lg shadow-lg w-[360px]">
         <img
           className="mx-auto mt-12 mb-8"

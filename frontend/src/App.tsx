@@ -1,9 +1,9 @@
-import { LoginPage } from "./pages/login";
+import { AppRoutes } from "./routes";
 
 export function App() {
   return (
-    <main className="flex items-center justify-center min-h-screen">
-      <LoginPage />
+    <main className="flex min-h-screen">
+      <AppRoutes />
     </main>
   );
 }
