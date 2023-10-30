@@ -1,3 +1,9 @@
+import { AppRoutes } from "./routes";
+
 export function App() {
-  return <div className="text-3xl font-bold">Gym Project</div>;
+  return (
+    <main className="flex min-h-screen">
+      <AppRoutes />
+    </main>
+  );
 }
