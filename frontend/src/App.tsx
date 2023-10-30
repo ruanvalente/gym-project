@@ -1,3 +1,9 @@
+import { LoginPage } from "./pages/login";
+
 export function App() {
-  return <div className="text-3xl font-bold">Gym Project</div>;
+  return (
+    <main className="flex items-center justify-center min-h-screen">
+      <LoginPage />
+    </main>
+  );
 }
