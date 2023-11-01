@@ -1,23 +1,48 @@
-import GympointLogoHeader from "../../assets/gympoint-logo-header.svg";
 import { useState } from "react";
+import { List, SignOut } from "@phosphor-icons/react";
+
+import GympointLogoHeader from "../../assets/gympoint-logo-header.svg";
 
 export function Header() {
   const [selectedItem, setSelectedItem] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleItemClick = (index: number) => {
     setSelectedItem(index);
+    setIsMenuOpen(false);
+  };
+
+  const handleMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <section className="w-full h-full">
-      <header className="flex w-full px-4 py-4 bg-white shadow-md">
-        <img
-          className="md:w-[200px] px-4"
-          src={GympointLogoHeader}
-          alt="Gympoint Header"
-        />
-        <ul className="flex items-center justify-center gap-6 px-4">
-          <li className="text-gray-500 hover:cursor-pointer hover:text-red-500">
+      <header className="flex flex-col items-center px-4 py-4 bg-white shadow-md md:flex-row">
+        <div className="flex items-center w-full md:w-auto md:flex-1">
+          <img
+            className="md:mb-0"
+            src={GympointLogoHeader}
+            alt="Gympoint Header"
+          />
+          <button
+            className="block ml-auto text-gray-500 md:hidden hover:text-red-500"
+            onClick={handleMenuClick}
+          >
+            <List size={32} />
+          </button>
+        </div>
+        <ul
+          className={`md:flex md:items-center md:gap-6 text-center ${
+            isMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          <li
+            className={`text-gray-500 hover:cursor-pointer hover:text-red-500 ${
+              selectedItem === 0 ? "font-bold" : ""
+            }`}
+            onClick={() => handleItemClick(0)}
+          >
             Alunos
           </li>
           <li
@@ -44,11 +69,16 @@ export function Header() {
           >
             Pedidos de Auxílio
           </li>
+          {isMenuOpen && <br />}
+          <button
+            className={`flex gap-1 text-sm text-red-500 ${
+              isMenuOpen ? "mt-4 mx-auto" : "ml-6 mt-0"
+            }`}
+          >
+            <SignOut size={18} />
+            <p>Sair</p>
+          </button>
         </ul>
-        <div className="ml-auto text-center">
-          <p className="text-sm font-semibold">Ruan Valente</p>
-          <button className="text-sm text-red-500">Sair do sistema</button>
-        </div>
       </header>
     </section>
   );

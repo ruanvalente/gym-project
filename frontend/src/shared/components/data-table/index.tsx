@@ -28,7 +28,7 @@ export function DataTable({ headerList }: DataTableProps) {
               <td className="px-6 py-4">22</td>
               <td className="px-6 py-4">
                 <button className="mr-4 text-blue-400">editar</button>
-                <button className="ml-4 text-red-400">apagar</button>
+                <button className="ml-0 text-red-400">apagar</button>
               </td>
             </tr>
             <tr className="border-b">
@@ -42,7 +42,7 @@ export function DataTable({ headerList }: DataTableProps) {
               <td className="px-6 py-4">22</td>
               <td className="px-6 py-4">
                 <button className="mr-4 text-blue-400">editar</button>
-                <button className="ml-4 text-red-400">apagar</button>
+                <button className="ml-0 text-red-400">apagar</button>
               </td>
             </tr>
             <tr className="border-b">
@@ -56,7 +56,7 @@ export function DataTable({ headerList }: DataTableProps) {
               <td className="px-6 py-4">22</td>
               <td className="px-6 py-4">
                 <button className="mr-4 text-blue-400">editar</button>
-                <button className="ml-4 text-red-400">apagar</button>
+                <button className="ml-0 text-red-400">apagar</button>
               </td>
             </tr>
             <tr className="border-b">
@@ -70,7 +70,7 @@ export function DataTable({ headerList }: DataTableProps) {
               <td className="px-6 py-4">22</td>
               <td className="px-6 py-4">
                 <button className="mr-4 text-blue-400">editar</button>
-                <button className="ml-4 text-red-400">apagar</button>
+                <button className="ml-0 text-red-400">apagar</button>
               </td>
             </tr>
             <tr className="border-b">
@@ -84,7 +84,7 @@ export function DataTable({ headerList }: DataTableProps) {
               <td className="px-6 py-4">22</td>
               <td className="px-6 py-4">
                 <button className="mr-4 text-blue-400">editar</button>
-                <button className="ml-4 text-red-400">apagar</button>
+                <button className="ml-0 text-red-400">apagar</button>
               </td>
             </tr>
           </tbody>
