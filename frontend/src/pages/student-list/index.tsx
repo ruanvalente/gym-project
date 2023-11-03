@@ -1,7 +1,28 @@
 import { DataTable } from "../../shared/components/data-table";
 
 export function StudentList() {
-  const headerList = ["nome", "e-mail", "idade", ""];
+  const headerList = ["id", "nome", "e-mail", "idade"];
+  const bodyList = [
+    {
+      id: 1,
+      title: "John Doe",
+      email: "john@example.com",
+      age: 30,
+    },
+    {
+      id: 2,
+      name: "John Doe",
+      email: "john@example.com",
+      age: 30,
+    },
+    {
+      id: 3,
+      name: "John Doe",
+      email: "john@example.com",
+      age: 30,
+    },
+  ];
+
   return (
     <>
       <div className="container flex flex-col w-full p-4 mx-auto mt-6 md:items-center md:justify-center md:flex-row md:p-0">
@@ -20,7 +41,7 @@ export function StudentList() {
         </div>
       </div>
 
-      <DataTable headerList={headerList} />
+      <DataTable bodyList={bodyList} headerList={headerList} />
     </>
   );
 }
