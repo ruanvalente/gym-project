@@ -2,19 +2,26 @@ import { useState } from "react";
 import { List, SignOut } from "@phosphor-icons/react";
 
 import GympointLogoHeader from "../../assets/gympoint-logo-header.svg";
+import { Button } from "../../shared/components/button";
+import { useNavigate } from "react-router-dom";
 
 export function Header() {
   const [selectedItem, setSelectedItem] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigation = useNavigate();
 
-  const handleItemClick = (index: number) => {
+  function handleItemClick(index: number) {
     setSelectedItem(index);
     setIsMenuOpen(false);
-  };
+  }
 
-  const handleMenuClick = () => {
+  function handleMenuClick() {
     setIsMenuOpen(!isMenuOpen);
-  };
+  }
+
+  function handleLogout() {
+    navigation("/login");
+  }
 
   return (
     <section className="w-full h-full">
@@ -70,14 +77,15 @@ export function Header() {
             Pedidos de Auxílio
           </li>
           {isMenuOpen && <br />}
-          <button
+          <Button
+            onClick={handleLogout}
             className={`flex gap-1 text-sm text-red-500 ${
               isMenuOpen ? "mt-4 mx-auto" : "ml-6 mt-0"
             }`}
           >
             <SignOut size={18} />
             <p>Sair</p>
-          </button>
+          </Button>
         </ul>
       </header>
     </section>
