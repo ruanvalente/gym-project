@@ -1,9 +1,18 @@
+import { useNavigate } from "react-router-dom";
+import { Button } from "../button";
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 type BodyListProps = {
   bodyList: Array<any>;
 };
 
 export function BodyList({ bodyList }: BodyListProps) {
+  const navigation = useNavigate();
+
+  function handleNavigationEdit(id: string) {
+    navigation(`/student/edit/${id}`);
+  }
+
   return (
     <tbody>
       {bodyList.map((item, rowIndex) => (
@@ -14,18 +23,18 @@ export function BodyList({ bodyList }: BodyListProps) {
             </td>
           ))}
           <td className="px-6 py-4">
-            <button
-              className="mr-4 text-blue-400"
-              onClick={() => console.log("Editar", item.id)}
+            <Button
+              className="gym__button--tertiary"
+              onClick={() => handleNavigationEdit(item.id)}
             >
               Editar
-            </button>
-            <button
-              className="ml-0 text-red-400"
+            </Button>
+            <Button
+              className="gym__button--tertiary__danger"
               onClick={() => console.log("Apagar", item.id)}
             >
               Apagar
-            </button>
+            </Button>
           </td>
         </tr>
       ))}

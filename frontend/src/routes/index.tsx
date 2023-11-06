@@ -1,17 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { LoginPage } from "../pages/login";
-import { StudentList } from "../pages/student-list";
 import { DefaultLayout } from "../layouts";
+import { LoginPage } from "../pages/login";
+import { StudentRoutes } from "../pages/student";
 
 export function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginPage />} />
+        <Route index path="/login" element={<LoginPage />} />
         <Route element={<DefaultLayout />}>
-          <Route path="/" index element={<StudentList />} />
-          <Route path="/home" element={<div>Home</div>} />
-          <Route path="/profile" element={<div>Home</div>} />
+          <Route path="/student/*" element={<StudentRoutes />} />
         </Route>
       </Routes>
     </BrowserRouter>

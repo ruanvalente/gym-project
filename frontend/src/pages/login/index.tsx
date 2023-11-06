@@ -2,6 +2,9 @@ import { FormEvent, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 import GymPointLogo from "../../assets/gympoint-logo.svg";
+import { InputComponent } from "../../shared/components/input";
+import { Button } from "../../shared/components/button";
+
 import "./styles.scss";
 
 export function LoginPage() {
@@ -33,29 +36,37 @@ export function LoginPage() {
           height="100"
         />
         <form className="flex flex-col" onSubmit={handleLogin}>
-          <label className="gym-sign__label" htmlFor="email">
-            seu e-mail
-          </label>
-          <input
-            className="gym-sign__input"
-            type="email"
-            name="email"
-            id="email"
-            placeholder="exemplo@email.com"
-            required
-          />
-          <label className="gym-sign__label" htmlFor="password">
-            sua senha
-          </label>
-          <input
-            className="gym-sign__input"
-            type="password"
-            name="password"
-            id="password"
-            placeholder="*********"
-            required
-          />
-          <button className="gym-sign__button">Entrar no sistema</button>
+          <InputComponent.Root>
+            <InputComponent.Label className="gym-sign__label" htmlFor="email">
+              seu e-mail
+            </InputComponent.Label>
+            <InputComponent.Input
+              className="gym-sign__input"
+              type="email"
+              name="email"
+              id="email"
+              placeholder="exemplo@email.com"
+              required
+            />
+          </InputComponent.Root>
+
+          <InputComponent.Root>
+            <InputComponent.Label
+              className="gym-sign__label"
+              htmlFor="password"
+            >
+              sua senha
+            </InputComponent.Label>
+            <InputComponent.Input
+              className="gym-sign__input"
+              type="password"
+              name="password"
+              id="password"
+              placeholder="*********"
+              required
+            />
+          </InputComponent.Root>
+          <Button className="gym-sign__button">Entrar no sistema</Button>
         </form>
       </div>
     </section>
