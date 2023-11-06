@@ -1,9 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../shared/components/button";
 import { InputComponent } from "../../../shared/components/input";
+import { useContext } from "react";
+import { StudentContext } from "../../../context/student-context";
+import { useFetchData } from "../../../hooks/use-fetch-data";
 
 export function StudentRegister() {
   const navigation = useNavigate();
+  const { state, setState } = useContext(StudentContext);
+  useFetchData("https://jsonplaceholder.typicode.com/todos/1", setState);
+  console.log(state);
 
   function handleGoBack() {
     navigation("/student");

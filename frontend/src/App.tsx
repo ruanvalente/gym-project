@@ -1,9 +1,12 @@
+import { GlobalContext } from "./context/global-context";
 import { AppRoutes } from "./routes";
 
 export function App() {
   return (
-    <main className="w-full h-full">
-      <AppRoutes />
-    </main>
+    <GlobalContext>
+      <main className="w-full h-full">
+        <AppRoutes />
+      </main>
+    </GlobalContext>
   );
 }
