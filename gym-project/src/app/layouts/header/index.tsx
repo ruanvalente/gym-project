@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+
 import { useState } from "react";
 
 import { List, SignOut } from "@phosphor-icons/react";
@@ -43,38 +45,42 @@ export default function Header() {
             isMenuOpen ? "block" : "hidden"
           }`}
         >
-          <li
+          <Link
+            href="/student"
             className={`text-gray-500 hover:cursor-pointer hover:text-red-500 ${
               selectedItem === 0 ? "font-bold" : ""
             }`}
             onClick={() => handleItemClick(0)}
           >
             Alunos
-          </li>
-          <li
+          </Link>
+          <Link
+            href="/plans"
             className={`text-gray-500 hover:cursor-pointer hover:text-red-500 ${
               selectedItem === 1 ? "font-bold" : ""
             }`}
             onClick={() => handleItemClick(1)}
           >
             Planos
-          </li>
-          <li
+          </Link>
+          <Link
+            href="/enrollment"
             className={`text-gray-500 hover:cursor-pointer hover:text-red-500 ${
               selectedItem === 2 ? "font-bold" : ""
             }`}
             onClick={() => handleItemClick(2)}
           >
             Matrículas
-          </li>
-          <li
+          </Link>
+          <Link
+            href="/request-for-assistance"
             className={`text-gray-500 hover:cursor-pointer hover:text-red-500 ${
               selectedItem === 3 ? "font-bold" : ""
             }`}
             onClick={() => handleItemClick(3)}
           >
             Pedidos de Auxílio
-          </li>
+          </Link>
           {isMenuOpen && <br />}
           <Button
             className={`flex gap-1 text-sm text-red-500 ${
