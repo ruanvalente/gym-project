@@ -4,9 +4,10 @@ import { Button } from "../button";
 
 type BodyListProps = {
   bodyList: Array<any>;
+  hasEdit?: boolean;
 };
 
-export function BodyList({ bodyList }: BodyListProps) {
+export function BodyList({ bodyList, hasEdit = false }: BodyListProps) {
   return (
     <tbody>
       {bodyList.map((item, rowIndex) => (
@@ -16,20 +17,22 @@ export function BodyList({ bodyList }: BodyListProps) {
               {item[key]}
             </td>
           ))}
-          <td className="px-6 py-4">
-            <Button
-              className="gym__button--tertiary"
-              onClick={() => console.log("Editar", item.id)}
-            >
-              Editar
-            </Button>
-            <Button
-              className="gym__button--tertiary__danger"
-              onClick={() => console.log("Apagar", item.id)}
-            >
-              Apagar
-            </Button>
-          </td>
+          {hasEdit && (
+            <td className="px-6 py-4">
+              <Button
+                className="gym__button--tertiary"
+                onClick={() => console.log("Editar", item.id)}
+              >
+                Editar
+              </Button>
+              <Button
+                className="gym__button--tertiary__danger"
+                onClick={() => console.log("Apagar", item.id)}
+              >
+                Apagar
+              </Button>
+            </td>
+          )}
         </tr>
       ))}
     </tbody>

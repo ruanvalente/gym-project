@@ -45,7 +45,11 @@ export default function Student() {
         </div>
       </div>
 
-      <DataTable bodyList={bodyList} headerList={headerList} />
+      <DataTable
+        bodyList={bodyList}
+        headerList={headerList}
+        hasEditTable={true}
+      />
     </>
   );
 }
