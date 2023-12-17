@@ -12,10 +12,8 @@ import { useEffect } from "react";
 export default function LoginPage() {
   const location = usePathname();
 
-  console.log(location);
-
   useEffect(() => {
-    if (location === "/login") {
+    if (location === "/") {
       document.body.classList.add("gym-point-login");
     }
   }, [location]);

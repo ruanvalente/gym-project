@@ -8,28 +8,22 @@ import useFormValidation from "@/app/lib/hooks/use-form-validation";
 
 export default function StudentPlansRegister() {
   const router = useRouter();
-  const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    handleBlur,
-    isSubmitting,
-  } = useFormValidation({
-    initialValues: {
-      planTitle: "",
-      durationMonth: "",
-      monthlyPrice: 0,
-    },
-    validationRules: {
-      planTitle: { required: true },
-      durationMonth: { required: true },
-      monthlyPrice: { required: true },
-    },
-    onSubmit: (values) => {
-      console.log("submited form values", values);
-    },
-  });
+  const { values, errors, handleChange, handleSubmit, handleBlur } =
+    useFormValidation({
+      initialValues: {
+        planTitle: "",
+        durationMonth: "",
+        monthlyPrice: 0,
+      },
+      validationRules: {
+        planTitle: { required: true },
+        durationMonth: { required: true },
+        monthlyPrice: { required: true },
+      },
+      onSubmit: (values) => {
+        console.log("submited form values", values);
+      },
+    });
 
   return (
     <>
